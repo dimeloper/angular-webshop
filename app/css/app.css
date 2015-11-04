@@ -451,8 +451,7 @@ body {
   }
 }
 
-@media (min-width: 992px){
-}
+
 
 
 /* --Webshop Detailed Product Styles-- */
@@ -484,6 +483,7 @@ body {
 }
 
 
+
 .product-photo {
   background-color: white;
   height: 270px;
@@ -506,13 +506,14 @@ body {
   display: flex;
 }
 
-
 ul.product-thumbs {
   margin: 0;
   list-style: none;
   padding-left: 0px;
 
 }
+
+
 
 ul.product-thumbs li:last-child {
   margin-right: 0px;
@@ -539,6 +540,63 @@ ul.product-thumbs img:hover {
   cursor: pointer;
 }
 
+
+@media (max-width: 650px){
+  .product-images {
+    width: 150px;
+    height: 150px;
+    border: none;
+  }
+
+  .product-photo {
+    height: 150px;
+  }
+
+  ul.product-thumbs{
+    height: 100px;
+    width: 200px;
+    position: absolute;
+    top: 50px;
+    left: 160px;
+  }
+}
+
+@media (max-width: 560px){
+  .product-images {
+    width: 130px;
+    height: 130px;
+    border: none;
+  }
+
+  .product-photo {
+    height: 130px;
+  }
+
+  ul.product-thumbs{
+    height: 100px;
+    width: 180px;
+    position: absolute;
+    top: 50px;
+    left: 140px;
+  }
+
+  ul.product-thumbs li {
+    border: 1px solid #ccc;
+    display: inline-block;
+    background-color: white;
+    height: 33px;
+    width: 45px;
+    margin-right: 3px;
+    text-align: center;
+  }
+
+
+
+  ul.product-thumbs img {
+    height: 30px;
+    padding: 2px;
+  }
+}
 
 .product-info-viewer{
   background-color: #fff;
@@ -635,22 +693,46 @@ button.basket{
   background-color: #37ADBF;
   color: #fff;
   margin: 15px;
+  font-size: 14px;
+}
+
+button.basket-side{
+  display: inline-block;
+}
+
+button.basket-bottom{
+  display: none;
 }
 
 button.back{
   background-color: #7D7D7D;
   color: #fff;
   margin: 15px;
+  font-size: 14px;
 }
+
+
 
 @media (max-width: 650px){
 
   .product-info-desc {
     width: 70%;
+    margin-bottom: 20px;
   }
 
   .product-info-desc > h1 {
-    font-size: 16px;
+    font-size: 12px;
+  }
+
+  .product-info-desc > h2{
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  .product-info-desc > p{
+    font-size: 10px;
+    line-height: 11px;
   }
 
   .product-info-rating > .fa-star{
@@ -668,6 +750,48 @@ button.back{
   .product-info-other {
     width: 25%;
     padding-right: 0px;
+  }
+
+  button.basket{
+    font-size: 14px;
+    width: 40%;
+    margin: 4%;
+  }
+
+  button.back{
+    width: 40%;
+    font-size: 14px;
+    margin: 4%;
+  }
+
+  button.basket-top{
+    position: absolute;
+    bottom: -5px;
+    padding: 5px 15px;
+  }
+
+  button.basket-side{
+    display: none;
+  }
+
+  button.basket-bottom{
+    display: inline-block;
+  }
+}
+
+@media (min-width: 650px){
+  button.basket-top{
+    display: none;
+  }
+}
+
+.spec-list{
+  width: 75%;
+}
+
+@media (max-width: 650px){
+  .spec-list{
+    width: 100%;
   }
 }
 
@@ -726,6 +850,7 @@ button.back{
 
 .spec-accordion > .col-3 {
   padding: 0px;
+  width: 50%;
 }
 
 

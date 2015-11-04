@@ -1,5 +1,6 @@
 <div class="webshop-top-bar">
    <img src="images/logo.png">
+   <i class="fa fa-bars"></i>
  </div>
 <div class="webshop-container">
   <div class="product-image-viewer">
@@ -20,6 +21,7 @@
           <timer countdown="product.offer.countDown" interval="1000" finish-callback="countDownFinished($index)">{{mminutes}}:{{sseconds}}</timer>
           <p>MINS LEFT</p>
         </span>
+        <button class="button basket basket-top">Add to basket</button>
     </div>
     
     <div class="product-info-viewer">
@@ -28,8 +30,33 @@
 
       <h2>Description:</h2>
       <p>{{product.description}}</p>
-      
-      <div class="spec-list">
+    </div>
+
+    <div class="product-info-other">
+      <div class="product-info-rating" >
+      <!--In the mockups filling part of the star is being presented but in the json files rating is an integer
+      value, so we assume that it's always an integer.-->
+        <span class="fa fa-star" ng-class="{'full-star' : product.rating>0}"></span>
+        <span class="fa fa-star" ng-class="{'full-star' : product.rating>1}"></span>
+        <span class="fa fa-star" ng-class="{'full-star' : product.rating>2}"></span>
+        <span class="fa fa-star" ng-class="{'full-star' : product.rating>3}"></span>
+        <span class="fa fa-star" ng-class="{'full-star' : product.rating>4}"></span>
+        <p>{{product.rating}} out of 5 stars</p>
+      </div>
+      <div class="product-info-price" >
+          <div class="full-price" ng-class="{'price-strikethrough' : product.offer.discount}">
+            &euro; {{product.price}}.00
+          </div><br>
+          <div class="offer-price" ng-if="product.offer.discount" >
+            &euro; {{product.offer.discountedPrice}}.00
+          </div> 
+          
+          <p>price incl. vat</p>
+          <p>excl. shipping</p>
+      </div>
+      <button class="button basket basket-side">Add to basket</button>
+    </div>
+    <div class="spec-list">
         
           <div class="spec-stable"
                     ng-click="toggleSpecs(0)"
@@ -61,31 +88,7 @@
           </div>
       </div>
       <button class="button back" ng-click="return()">Go back</button>
-    </div>
-    <div class="product-info-other">
-      <div class="product-info-rating" >
-      <!--In the mockups filling part of the star is being presented but in the json files rating is an integer
-      value, so we assume that it's always an integer.-->
-        <span class="fa fa-star" ng-class="{'full-star' : product.rating>0}"></span>
-        <span class="fa fa-star" ng-class="{'full-star' : product.rating>1}"></span>
-        <span class="fa fa-star" ng-class="{'full-star' : product.rating>2}"></span>
-        <span class="fa fa-star" ng-class="{'full-star' : product.rating>3}"></span>
-        <span class="fa fa-star" ng-class="{'full-star' : product.rating>4}"></span>
-        <p>{{product.rating}} out of 5 stars</p>
-      </div>
-      <div class="product-info-price" >
-          <div class="full-price" ng-class="{'price-strikethrough' : product.offer.discount}">
-            &euro; {{product.price}}.00
-          </div><br>
-          <div class="offer-price" ng-if="product.offer.discount" >
-            &euro; {{product.offer.discountedPrice}}.00
-          </div> 
-          
-          <p>price incl. vat</p>
-          <p>excl. shipping</p>
-      </div>
-      <button class="button basket">Add to basket</button>
-    </div>
+      <button class="button basket basket-bottom">Add to basket</button>
   
 
   
@@ -96,9 +99,7 @@
 </div>
 
 <div class="webshop-footer">
-<h1>Looking for the best offers on the Internet?</h1>
-   <h2>We are sure we have what you are looking for!<br>
-   Don't waste more time and find it now!</h2>
+
   <div class="webshop-footer-content">
   <div class="social-icon">
         <a class="fa anim-5 fa-facebook" target="_blank" href="#"></a>
