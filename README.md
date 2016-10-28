@@ -9,6 +9,7 @@ Bower Components used:
 - angular-route
 - angular-animate
 - angular-timer (for product countdown)
+- moment
 
 The CSS is custom-made.
 
@@ -16,7 +17,5 @@ You will need to install npm and bower.
 
 Use "npm start" to install the needed modules and dependencies and to deploy the application locally on "localhost:8000/app/index.html"
 
-Author: 
+Author:
 Dimitrios Kiriakakis
-
-
